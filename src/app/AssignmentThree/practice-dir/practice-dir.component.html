@@ -1,0 +1,14 @@
+<button class="btn btn-success" (click)="showPassword()">
+  Display Details!
+</button>
+<p *ngIf="passwordDisplay; else noPassword">Secret Password ={{ password }}</p>
+<ng-template #noPassword>
+  <p>Secret Password = ****</p>
+</ng-template>
+<div
+  [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+  [ngClass]="{ fifTh: i >= 4 }"
+  *ngFor="let num of numCountArray; let i = index"
+>
+  {{ num }}
+</div>
