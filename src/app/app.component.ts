@@ -19,6 +19,7 @@ export class AppComponent {
   serverElements = [
     { type: 'server', name: 'TestServer', content: 'Just a Test' },
   ];
+  gameNumber = 0;
   onServerAdded(serverData: { serverName: string; serveContent: string }) {
     this.serverElements.push({
       type: 'server',
@@ -33,5 +34,15 @@ export class AppComponent {
       name: serverData.serverName,
       content: serverData.serveContent,
     });
+  }
+  onFirstChange() {
+    this.serverElements[0].name = 'Changed';
+  }
+  onDestroyFirst() {
+    this.serverElements.splice(0, 1);
+  }
+  startGame(newNumber: number) {
+    this.gameNumber = newNumber;
+    console.log(this.gameNumber);
   }
 }

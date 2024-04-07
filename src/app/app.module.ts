@@ -11,6 +11,9 @@ import { UsernameComponent } from './AssignmentTwo/username/username.component';
 import { PracticeDirComponent } from './AssignmentThree/practice-dir/practice-dir.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { OddComponent } from './AssignmentFour/odd/odd.component';
+import { EvenComponent } from './AssignmentFour/even/even.component';
+import { GameControlComponent } from './AssignmentFour/game-control/game-control.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { ServerElementComponent } from './server-element/server-element.componen
     PracticeDirComponent,
     CockpitComponent,
     ServerElementComponent,
+    OddComponent,
+    EvenComponent,
+    GameControlComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
