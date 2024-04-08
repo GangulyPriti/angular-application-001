@@ -14,6 +14,9 @@ import { ServerElementComponent } from './server-element/server-element.componen
 import { OddComponent } from './AssignmentFour/odd/odd.component';
 import { EvenComponent } from './AssignmentFour/even/even.component';
 import { GameControlComponent } from './AssignmentFour/game-control/game-control.component';
+import { BasicHighlightDirective } from './directives/basic-hightlight.directive';
+import { BetterHighlightDirective } from './directives/better-highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { GameControlComponent } from './AssignmentFour/game-control/game-control
     OddComponent,
     EvenComponent,
     GameControlComponent,
+    BasicHighlightDirective,
+    BetterHighlightDirective,
+    UnlessDirective, //directive
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

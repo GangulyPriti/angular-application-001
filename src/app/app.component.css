@@ -1,5 +1,5 @@
 h3 {
-  color: dodgerblue;
+  color: maroon;
 }
 .container {
   margin-bottom: 30px;
@@ -7,5 +7,8 @@ h3 {
 }
 
 p {
-  color: blue;
+  color: orange;
+}
+.odd {
+  color: red;
 }

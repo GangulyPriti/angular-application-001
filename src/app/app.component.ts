@@ -16,10 +16,18 @@ import { Component } from '@angular/core';
   // ],
 })
 export class AppComponent {
+  basic: boolean = false;
+  componentDiv: boolean = false;
+  directiveDeep: boolean = true;
+  value = 10;
   serverElements = [
     { type: 'server', name: 'TestServer', content: 'Just a Test' },
   ];
   gameNumber = 0;
+  // numbers = [1, 2, 3, 4, 5];
+  oddNumber = [1, 3, 5];
+  evenNumber = [2, 4];
+  onlyOdd = false;
   onServerAdded(serverData: { serverName: string; serveContent: string }) {
     this.serverElements.push({
       type: 'server',
