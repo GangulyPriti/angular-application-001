@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AccountService } from './services/accounts.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -15,10 +17,11 @@ import { Component } from '@angular/core';
   //   `,
   // ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   basic: boolean = false;
   componentDiv: boolean = false;
-  directiveDeep: boolean = true;
+  directiveDeep: boolean = false;
+  dependencyInj: boolean = true;
   value = 10;
   serverElements = [
     { type: 'server', name: 'TestServer', content: 'Just a Test' },
@@ -28,6 +31,7 @@ export class AppComponent {
   oddNumber = [1, 3, 5];
   evenNumber = [2, 4];
   onlyOdd = false;
+
   onServerAdded(serverData: { serverName: string; serveContent: string }) {
     this.serverElements.push({
       type: 'server',
@@ -52,5 +56,17 @@ export class AppComponent {
   startGame(newNumber: number) {
     this.gameNumber = newNumber;
     console.log(this.gameNumber);
+  }
+  accounts: { name: string; status: string }[] = [];
+  activeUsers: string[] = [];
+  inactiveUsers: string[] = [];
+  constructor(
+    private accountService: AccountService,
+    private userService: UserService
+  ) {}
+  ngOnInit(): void {
+    this.accounts = this.accountService.accounts;
+    this.activeUsers = this.userService.activeUsers;
+    this.inactiveUsers = this.userService.inactiveUsers;
   }
 }

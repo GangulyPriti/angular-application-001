@@ -17,6 +17,14 @@ import { GameControlComponent } from './AssignmentFour/game-control/game-control
 import { BasicHighlightDirective } from './directives/basic-hightlight.directive';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { AccountComponent } from './account/account.component';
+import { AccountService } from './services/accounts.service';
+import { LoggingService } from './services/logging.service';
+import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
+import { ActiveUsersComponent } from './active-users/active-users.component';
+import { UserService } from './services/user.service';
+import { CounterService } from './services/counter.service';
 
 @NgModule({
   declarations: [
@@ -34,10 +42,14 @@ import { UnlessDirective } from './directives/unless.directive';
     GameControlComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    UnlessDirective, //directive
+    UnlessDirective,
+    AccountComponent,
+    NewAccountComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [AccountService, LoggingService, UserService, CounterService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
